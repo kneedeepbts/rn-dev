@@ -95,7 +95,7 @@ echo "#"
 
 echo "# adding additional repo tools"
 installIfMissing software-properties-common
-installIfMissing python-software-properties
+#installIfMissing python-software-properties
 echo "# - done"
 echo
 
