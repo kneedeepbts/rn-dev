@@ -135,7 +135,8 @@ installIfMissing libzmq5
 installIfMissing python-zmq
 if [ "$MANUFACTURER" == "Ettus" ]; then
 	installIfMissing libuhd-dev
-	installIfMissing libuhd003
+	#installIfMissing libuhd003
+	installIfMissing libuhd3.13.1
 	installIfMissing uhd-host
 fi
 echo "# - done"
