@@ -146,16 +146,16 @@ BUILDNAME="BUILDS/`date +"%Y-%m-%d--%H-%M-%S"`"
 echo "# make a home for this build"
 sayAndDo mkdir -p $BUILDNAME
 
-if [ "$COMPONENT" == "all" ] || [ "$COMPONENT" == "libcoredumper" ]; then
-	echo "# libcoredumper - building Debian package and installing as dependency"
-	sayAndDo cd libcoredumper
-	sayAndDo ./build.sh
-	sayAndDo mv libcoredumper* ../$BUILDNAME
-	sayAndDo cd ..
-	sayAndDo sudo dpkg -i $BUILDNAME/libcoredumper*.deb
-	echo "# - done"
-	echo
-fi
+#if [ "$COMPONENT" == "all" ] || [ "$COMPONENT" == "libcoredumper" ]; then
+#	echo "# libcoredumper - building Debian package and installing as dependency"
+#	sayAndDo cd libcoredumper
+#	sayAndDo ./build.sh
+#	sayAndDo mv libcoredumper* ../$BUILDNAME
+#	sayAndDo cd ..
+#	sayAndDo sudo dpkg -i $BUILDNAME/libcoredumper*.deb
+#	echo "# - done"
+#	echo
+#fi
 
 if [ "$COMPONENT" == "all" ] || [ "$COMPONENT" == "liba53" ]; then
 	echo "# liba53 - building Debian package and installing as dependency"
