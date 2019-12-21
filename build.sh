@@ -110,7 +110,6 @@ installIfMissing libusb-1.0-0
 installIfMissing libusb-1.0-0-dev
 installIfMissing libortp-dev
 installIfMissing libortp9
-installIfMissing libortp13
 installIfMissing libosip2-dev
 installIfMissing libreadline-dev
 installIfMissing libncurses5
@@ -136,7 +135,6 @@ installIfMissing python-zmq
 if [ "$MANUFACTURER" == "Ettus" ]; then
 	installIfMissing libuhd-dev
 	installIfMissing libuhd003
-	installIfMissing libuhd3.13.1
 	installIfMissing uhd-host
 fi
 echo "# - done"
