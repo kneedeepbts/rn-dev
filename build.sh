@@ -95,7 +95,7 @@ echo "#"
 
 echo "# adding additional repo tools"
 installIfMissing software-properties-common
-#installIfMissing python-software-properties
+installIfMissing python-software-properties
 echo "# - done"
 echo
 
@@ -109,7 +109,7 @@ installIfMissing libsqlite3-dev
 installIfMissing libusb-1.0-0
 installIfMissing libusb-1.0-0-dev
 installIfMissing libortp-dev
-#installIfMissing libortp9
+installIfMissing libortp9
 installIfMissing libortp13
 installIfMissing libosip2-dev
 installIfMissing libreadline-dev
@@ -135,7 +135,7 @@ installIfMissing libzmq5
 installIfMissing python-zmq
 if [ "$MANUFACTURER" == "Ettus" ]; then
 	installIfMissing libuhd-dev
-	#installIfMissing libuhd003
+	installIfMissing libuhd003
 	installIfMissing libuhd3.13.1
 	installIfMissing uhd-host
 fi
@@ -146,16 +146,16 @@ BUILDNAME="BUILDS/`date +"%Y-%m-%d--%H-%M-%S"`"
 echo "# make a home for this build"
 sayAndDo mkdir -p $BUILDNAME
 
-#if [ "$COMPONENT" == "all" ] || [ "$COMPONENT" == "libcoredumper" ]; then
-#	echo "# libcoredumper - building Debian package and installing as dependency"
-#	sayAndDo cd libcoredumper
-#	sayAndDo ./build.sh
-#	sayAndDo mv libcoredumper* ../$BUILDNAME
-#	sayAndDo cd ..
-#	sayAndDo sudo dpkg -i $BUILDNAME/libcoredumper*.deb
-#	echo "# - done"
-#	echo
-#fi
+if [ "$COMPONENT" == "all" ] || [ "$COMPONENT" == "libcoredumper" ]; then
+	echo "# libcoredumper - building Debian package and installing as dependency"
+	sayAndDo cd libcoredumper
+	sayAndDo ./build.sh
+	sayAndDo mv libcoredumper* ../$BUILDNAME
+	sayAndDo cd ..
+	sayAndDo sudo dpkg -i $BUILDNAME/libcoredumper*.deb
+	echo "# - done"
+	echo
+fi
 
 if [ "$COMPONENT" == "all" ] || [ "$COMPONENT" == "liba53" ]; then
 	echo "# liba53 - building Debian package and installing as dependency"
